@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<body>
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+        </div>
+        <form action="{{url_for('predict')}}" method="post">
+            <h3>Flower Class Prediction</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="Sepal_lenght" class="form-control" placeholder="Sepal_lenght" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Sepal_width" class="form-control" placeholder="Sepal_width" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Petal_lenght" class="form-control" placeholder="Petal_lenght"
+                            value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Petal_width" class="form-control" placeholder="Petal_width"
+                            value="" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Prediction</button>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Hasil Prediksi</h3>
+                    <h3>{{ prediction_text }}</h3>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
